@@ -1,1 +1,1 @@
-Folder is not commited to git repo as it is not included in gitignore
+Folder is commited to git repo as it is not included in gitignore
