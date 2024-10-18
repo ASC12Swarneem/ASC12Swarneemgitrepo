@@ -14,5 +14,14 @@ export class CarManager{
         this.cars = this.cars.filter(car => car.id !==id);
         console.log(`Car with id ${id} removed successfully`);
     }
-}
 
+    searchByID(id: number): Car | undefined {
+        const foundCar = this.cars.find(car => car.id === id);
+        if (foundCar) {
+            return foundCar;
+        } else {
+            console.log(`Car with id ${id} not found`);
+            return undefined;
+        }
+    }
+}

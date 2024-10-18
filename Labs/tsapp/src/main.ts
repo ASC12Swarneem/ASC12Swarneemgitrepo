@@ -29,6 +29,7 @@ console.clear;
 let cars: Car[] = carManager.listCars();
 console.log(car);
 
+//Step 6: Creating another object
 const car2 :Car = {
     id: 2,
     manufacturer: 'BMW',         
@@ -42,7 +43,11 @@ const car2 :Car = {
     launchDate: '23/12/2020'
 };
 
+//STEP 7: Adding the car to the list with id 2
 carManager.addCar(car2);
 
 cars = carManager.listCars();
 console.log(cars);
+
+//Step 8: Searching the car by id
+carManager.searchByID(6);
