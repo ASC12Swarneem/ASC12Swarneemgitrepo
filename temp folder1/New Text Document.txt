@@ -1,1 +1,1 @@
-Folder is pushed to git as it is not included in gitignore
+Folder is not commited to git repo as it is not included in gitignore
