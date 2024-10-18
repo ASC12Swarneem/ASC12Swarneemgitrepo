@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Document</title>
+
+        <!-- <script>
+            console.log("s1");
+        </script>
+
+        <script src="External.js">
+        </script>
+
+        <script>
+            console.log("s2");
+        </script>
+
+        <script>
+            function internalScript(){
+                console.log("This is the script written in HTML file");
+            }
+        </script>
+
+        <script>
+            console.log("s3");
+        </script>
+
+        <script>
+            console.log("Calling the internalScript() function");
+            internalScript();
+        </script> -->
+
+        <script>
+            function apple(){
+                // var iPhone = document.createElement("div");
+                var iPhone = document.getElementById("youtube");
+                
+
+            iPhone.innerHTML = '<iframe width="676" height="380" src="https://www.youtube.com/embed/GDlkCkcIqTs" title="Introducing iPhone 16 | Apple" allowfullscreen></iframe>';
+
+            // document.body.appendChild(iPhone);
+            // The appendChild will keep adding the video when we click on the buttons
+            }
+
+            function samsung(){
+                // var ultra = document.createElement("div");
+                var ultra = document.getElementById("youtube");
+
+            ultra.innerHTML = '<iframe width="676" height="380" src="https://www.youtube.com/embed/3hPoEmlBQdY" title="Galaxy S24 Ultra: Official Introduction Film | Samsung" allowfullscreen></iframe>';
+
+            // document.body.appendChild(ultra);
+            }
+
+            function onePlus(){
+                // var oneplus = document.createElement("div");
+                var oneplus = document.getElementById("youtube");
+            
+            oneplus.innerHTML = '<iframe width="676" height="380" src="https://www.youtube.com/embed/_vAz2xylmWc" title="OnePlus Nord 4 | Built To Last" allowfullscreen></iframe>';
+
+            // document.body.appendChild(oneplus);
+            }
+        </script>
+    </head>
+
+    <body>
+        <h3>DOM manipulation</h3>
+        <button onclick="apple()">APPLE</button>
+        <button onclick="samsung()">SAMSUNG</button>
+        <button onclick="onePlus()">ONEPLUS</button>
+
+        <div id="youtube"> 
+
+        </div>
+    </body>
+</html>
+
+
+
+
