@@ -1,7 +1,7 @@
 .grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-image: url("/Labs/Registration_Form/Resources/bgimg.jpg");
+    background-image: url("./Resources/bgimg.jpg");
     background-position: center;
     height: 100%;
     background-size: cover;
@@ -78,7 +78,6 @@ input[type="reset"]:hover {
 .label{
    font-weight: 500;
    text-shadow: black;
-
 }
 
 .nav-btn, .nav-btn-dropdown {
@@ -121,6 +120,7 @@ input[type="reset"]:hover {
     display: block;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .dropdown-content a:hover {
@@ -138,5 +138,30 @@ input[type="reset"]:hover {
     color: black;
 }
 
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #ebe4e4;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 
+      2px 2px 5px rgba(13, 12, 12, 0.7),  
+      -2px -2px 3px rgba(142, 130, 130, 0.4); 
+    margin: 30px 0;
+    text-align: justify;
+}
+
+h1{
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3.5rem !important;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    text-shadow: 
+      2px 2px 5px rgba(0, 0, 0, 0.5),  
+      -2px -2px 3px rgba(255, 255, 255, 0.4);
+    margin: 30px 0;
+  }
 
 
