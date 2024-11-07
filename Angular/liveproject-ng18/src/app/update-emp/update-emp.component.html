@@ -1,0 +1,18 @@
+<p>update-emp works!</p>
+<form (ngSubmit)="updateEmployee()" #updateForm="ngForm">
+    <div class="formGroup">
+        <label>ID</label>
+        <input type="text" class="form-control" id="id" name="id" [(ngModel)]="employee.id" >
+    </div>
+    <div class="formGroup">
+        <label>Name</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="employee.name" >
+    </div>
+    <div class="formGroup">
+        <label>Salary</label>
+        <input type="text" class="form-control" id="salary" name="salary" [(ngModel)]="employee.salary" >
+    </div>
+
+    <button type="submit">Update</button>
+    <!-- <button type="submit"  (click)="updateEmployee()">Update</button> -->
+</form>

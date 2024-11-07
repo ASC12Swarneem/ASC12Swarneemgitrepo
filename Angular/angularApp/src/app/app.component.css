@@ -1,7 +1,7 @@
 .grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-image: url("./Resources/bgimg.jpg");
+    background-image: url("../assets/bgimg.jpg");
     background-position: center;
     height: 100%;
     background-size: cover;
@@ -15,11 +15,12 @@
     border: 3px solid black;
     max-width: 420px;
     border-radius: 8px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
 }
 
 h2 {
     text-align: center;
+    color: black;
     font-style: italic; 
 }
 
@@ -78,19 +79,20 @@ input[type="reset"]:hover {
 .label{
    font-weight: 500;
    text-shadow: black;
+
 }
 
 .nav-btn, .nav-btn-dropdown {
     background-color: rgba(0, 0, 0, 0.8); 
     color: rgb(255, 255, 255);
     border-radius: 5px;
-    border-color: rgb(85, 4, 247);
     font-family: 'Times New Roman', Times, serif;
-    height: 40px;
+    height: 35px;
     width: 70px;
-    border: 5px;
     cursor: pointer;
     text-align: center;
+    margin-left: 5px;
+    font-weight: 400;
 }
 
 .nav-btn:hover, .nav-btn-dropdown:hover {
@@ -137,6 +139,12 @@ input[type="reset"]:hover {
     color: black;
 }
 
+#logo{
+    background-image: url("../assets/logo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 p{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -153,29 +161,12 @@ p{
 h1{
     font-style: italic;
     font-family: 'Open Sans', sans-serif;
-    font-size: 3rem !important;
+    font-size: 3.3rem !important;
     font-weight: 600;
     color: #444;
     text-align: center;
     text-shadow: 
       2px 2px 5px rgba(0, 0, 0, 0.5),  
       -2px -2px 3px rgba(255, 255, 255, 0.4);
-    /* margin: 0px 0; */
-    margin-top: -50px;
-  }
-
-  .socialmedia{
-    margin-left: 265px;
-    margin-top: 150px;
-  }
-
-  .mediaicons{
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  h6{
-    font-family: 'Open Sans', sans-serif;
-    color: white;
+    margin: 30px 0;
   }

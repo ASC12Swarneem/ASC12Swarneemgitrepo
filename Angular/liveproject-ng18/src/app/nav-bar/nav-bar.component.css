@@ -1,0 +1,14 @@
+.nav-item{
+    display: inline-flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 5px;
+    text-decoration: none;
+    
+}
+
+.nav-elements{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}

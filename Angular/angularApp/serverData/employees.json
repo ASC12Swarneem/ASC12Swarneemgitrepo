@@ -1,0 +1,28 @@
+{
+    "employees":
+    [
+        {
+            "id": "1",
+            "name": "Swarneem",
+            "city": "Nagpur"
+        },
+
+        {
+            "id": "2",
+            "name": "Rohit",
+            "city": "Nagpur"
+        },
+
+        {
+            "id": "3",
+            "name": "Gaurav",
+            "city": "Noida"
+        },
+
+        {
+            "id": "4",
+            "name": "Subbu",
+            "city": "Chennai"
+        }
+    ]
+}

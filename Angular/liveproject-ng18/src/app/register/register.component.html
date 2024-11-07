@@ -1,0 +1,45 @@
+<div class="registration-container">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <h2>Employee Registration</h2>
+  
+      <label for="id">Employee ID:</label>
+      <input id="id" type="number" formControlName="id" placeholder="Enter Employee ID" />
+      <div *ngIf="employeeForm.get('id').invalid && employeeForm.get('id').touched" class="error">
+        Please enter a valid ID.
+      </div>
+  
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" placeholder="Enter Employee Name" />
+      <div *ngIf="employeeForm.get('name').invalid && employeeForm.get('name').touched" class="error">
+        Name is required (min 3 characters).
+      </div>
+  
+      <label for="salary">Salary:</label>
+      <input id="salary" type="number" formControlName="salary" placeholder="Enter Employee Salary" />
+      <div *ngIf="employeeForm.get('salary').invalid && employeeForm.get('salary').touched" class="error">
+        Please enter a valid salary.
+      </div>
+  
+      <button type="submit">Register</button>
+      <!-- <button type="submit"  (click)="onSubmit()">Register</button> -->
+    </form>
+  </div>
+
+
+  <!-- <div class="register-container">
+    <form class="form">
+        <p>This is the Register component</p>
+        <label for="id">ID:</label>
+        <input id="id" type="number" placeholder="Enter Employee ID" /><br>
+        
+        <label for="name">Name:</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter Employee Name" /><br> 
+        
+        <label for="salary">Salary:</label>
+        <input id="salary" type="number" formControlName="salary" placeholder="Enter Employee salary" /><br> 
+
+        <button (click)="onSubmit()">Login</button>
+    </form>
+</div> -->
+
+
