@@ -1,0 +1,24 @@
+<div class="login-container">
+    <form class="form" [formGroup]="loginForm">
+        <p>This is the login component</p>
+        <label for="loginid">Email:</label>
+        <input id="loginid" type="email" formControlName="loginid" placeholder="Enter your email" /><br>
+        
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" placeholder="Enter your password" /><br> 
+        
+        <button (click)="onSubmit()">Login</button>
+    </form>
+</div>
+
+<!-- <div style="border: 3px solid rgb(0, 0, 0); display: flex; flex-direction: column; justify-content: center; align-items: center;"> 
+<form class="from" [formGroup]="loginForm">
+    <p>This is the login component  </p>
+    Login Id :
+    <input type="text" formControlName ="loginid"><br>
+    Password : 
+    <input type="password" formControlName="password"><br>  
+    <button (click)="onSubmit()">Login</button>
+</form>
+</div>   -->
+
