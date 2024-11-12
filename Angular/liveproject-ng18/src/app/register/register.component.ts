@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../service/employee.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,9 @@ import { EmployeeService } from '../service/employee.service';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent {
+
+export class RegisterComponent 
+{
   employeeForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,  private router: Router, private employeeService: EmployeeService){

@@ -33,9 +33,13 @@ export class LoginComponent implements OnInit{
         const loginid: string = this.loginForm.get("loginid").value;
         const password: string = this.loginForm.get("password").value;
 
+        const usersData = JSON.parse(localStorage.getItem("signUpDataArray") || "[]" )
+
+        // Checking if the entered username and password matches with the id and password in the local storage 
+        const user = usersData.find((user:any) => user.emailId === loginid && user.passWord=== password);
 
         // Authentication for id and password
-        if(loginid==="teddy" && password==="pass"){
+        if(user){
             console.log("Login successful")
             alert("Login Successful");
             sessionStorage.setItem("loggedin", "yes");

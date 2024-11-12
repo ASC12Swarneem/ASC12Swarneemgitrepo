@@ -4,11 +4,12 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { LoginComponent } from "./login/login.component";
 import { ListEmpComponent } from "./list-emp/list-emp.component";
-import { FormsModule, NgModel, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { HomeComponent } from "./home/home.component";
 import { UpdateEmpComponent } from "./update-emp/update-emp.component";
+import { SignUpComponent } from "./sign-up/sign-up.component";
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { UpdateEmpComponent } from "./update-emp/update-emp.component";
         LoginComponent,
         ListEmpComponent,
         NavBarComponent,
-        UpdateEmpComponent
+        UpdateEmpComponent,
+        SignUpComponent
         ],
 
     imports: [

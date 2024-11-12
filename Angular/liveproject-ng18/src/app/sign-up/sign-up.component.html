@@ -1,0 +1,102 @@
+<div class="container">
+    <form class="form" [formGroup]="signUpForm"  (ngSubmit) = "onSubmit()">
+        <p class="P1">This is the Sign Up component</p>
+        <div class="formGroup">
+            <label>Admin Name:</label>
+            <input type="text" 
+            placeholder="Enter admin name" 
+            formControlName="adminName" 
+            class="form-control" 
+            [ngClass]=
+            "{
+                'is-invalid': f['adminName']?.errors, 
+                'boldItalicError':f['adminName']?.errors
+            }"/>
+
+            <div *ngIf="submitted && f['adminName'].errors" class="invalid-feedback boldItalicError">
+                <div *ngIf="f['adminName'].errors['required']">Admin Name is required.</div>
+                <div *ngIf="f['adminName'].errors['minlength']">Admin Name must be at least 4 characters.</div>
+                <div *ngIf="f['adminName'].errors['maxlength']">Admin Name cannot exceed 20 characters.</div>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <label>Email:</label>
+            <input type="text" 
+            placeholder="Enter your email" 
+            formControlName="emailId" 
+            class="form-control"
+            [ngClass]=
+            "{
+                'is-invalid': f['emailId'].errors, 
+                'boldItalicError':f['emailId']?.errors
+            }"/>
+
+            <div *ngIf="submitted && f['emailId'].errors" class="invalid-feedback boldItalicError">
+                <div *ngIf="f['emailId'].errors['required']">Email is required!</div>
+                <div *ngIf="f['emailId'].errors['email']">Email should be valid!</div>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <label>Phone number:</label>
+            <input type="number" 
+            placeholder="Enter your Phone no" 
+            formControlName="phoneNo" 
+            class="form-control"
+            [ngClass]=
+            "{
+               'is-invalid': f['phoneNo'].errors,
+                'boldItalicError': f['phoneNo'].errors
+             }"/>
+
+             <div *ngIf="submitted && f['phoneNo'].errors" class="invalid-feedback boldItalicError">
+                <div *ngIf="f['phoneNo'].errors['required']">Phone number is required!</div>
+                <div *ngIf="f['phoneNo'].errors['pattern']">Phone no should be 10 characters!</div>
+             </div>
+        </div>
+
+        <br>
+        <div class="formGroup">
+            <label>Password:</label>
+            <input type="email" 
+            placeholder="Enter your password" 
+            formControlName="passWord" 
+            class="form-control"
+            [ngClass] =
+            "{
+                'is-invalid': f['passWord'].errors,
+                'boldItalicError': f['passWord'].errors
+            }"/>
+
+            <div *ngIf="submitted && f['passWord'].errors" class="invalid-feedback boldItalicError">
+                <div *ngIf="f['passWord'].errors['required']">Password is required!</div>
+                <div *ngIf="f['passWord'].errors['pattern']">Password is required!</div>
+            </div>
+        </div>
+
+        <button>Sign-U</button>
+        <a class="signup" routerLink="/login">Already an user? Login</a>
+
+    </form>
+</div>
+
+<!-- <p>sign-up works!</p>
+<br>
+<h3>Sign-up</h3>
+<div class="container">
+    <form [formGroup]="signUpForm">
+        <div class="formGroup" (ngSubmit) = "onSubmit()">
+            <label>Admin Name</label>
+            <input type="text" formControlName="adminName" class="form-control" [ngClass]=
+            "{
+                'is-invalid': submitted && f['adminName'].errors, 
+                'boldItalicError': f['adminName'].errors
+            }"/>
+        </div>
+
+        <div *ngIf="signUpForm['adminName'].errors" class="invalid-feedback boldItalicError">
+            <div *ngIf=""></div>
+        </div>
+    </form>
+</div> -->

@@ -1,13 +1,20 @@
-<div class="login-container">
+<div class="container">
     <form class="form" [formGroup]="loginForm">
-        <p>This is the login component</p>
+        <p class="P1">This is the login component</p>
         <label for="loginid">Email:</label>
-        <input id="loginid" type="email" formControlName="loginid" placeholder="Enter your email" /><br>
+        <input id="loginid" 
+               type="email" 
+               formControlName="loginid" 
+               placeholder="Enter your email" />
         
         <label for="password">Password:</label>
-        <input id="password" type="password" formControlName="password" placeholder="Enter your password" /><br> 
+        <input id="password" 
+               type="password" 
+               formControlName="password" 
+               placeholder="Enter your password" />
         
         <button (click)="onSubmit()">Login</button>
+        <a class="signup" routerLink="/sign-up">Don't have an account? Sign Up</a>
     </form>
 </div>
 
