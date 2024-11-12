@@ -6,22 +6,25 @@ import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import { UpdateEmpComponent } from "./update-emp/update-emp.component";
 import { AuthGuardService } from "./service/authguard.service";
+import { SignUpComponent } from "./sign-up/sign-up.component";
 
-const routes: Routes = [
+const routes: Routes = 
+[
     // Adding the routing paths to the angular app, also adding the authguard services
     {path: '', component: HomeComponent},
     {path: 'employees', component: ListEmpComponent, canActivate: [AuthGuardService]},
     {path: 'update/:id', component: UpdateEmpComponent, canActivate: [AuthGuardService]},
     {path: 'login' , component: LoginComponent},
     {path: 'register', component: RegisterComponent, canActivate: [AuthGuardService]},
-    {path: '**', component: LoginComponent}
+    {path: 'sign-up', component: SignUpComponent}
+]
 
-   ]
-   @NgModule({
-       imports: [RouterModule.forRoot(routes)],
-       exports: [RouterModule],
-    
-   })
-   export class AppRoutingModule {
+@NgModule
+({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
+})
+
+export class AppRoutingModule {
     
 }

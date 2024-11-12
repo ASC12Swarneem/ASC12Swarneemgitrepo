@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component} from '@angular/core';
 import { Employee } from '../../model/employee.model';
 import { EmployeeService } from '../service/employee.service';
 import { ActivatedRoute, Router } from '@angular/router';
