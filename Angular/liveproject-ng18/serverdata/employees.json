@@ -1,34 +1,44 @@
 {
   "employees": [
     {
-      "id": "4",
-      "name": "four",
-      "salary": 4
+      "id": 1,
+      "name": "Swarneem",
+      "salary": 100000
     },
     {
-      "id": "3",
-      "name": "three",
-      "salary": 3
-    },
-    {
-      "id": "1",
-      "name": "one",
-      "salary": "11"
-    },
-    {
-      "id": "6",
-      "name": "ggcgfcfd",
-      "salary": 66666666
-    },
-    {
-      "id": "111",
+      "id": 2,
       "name": "Rohit",
-      "salary": 11111111111111112
+      "salary": 100000
     },
     {
-      "id": "90",
-      "name": "Bodha",
-      "salary": "101"
+      "id": 3,
+      "name": "Gaurav",
+      "salary": 100000
+    },
+    {
+      "id": 4,
+      "name": "Mishra",
+      "salary": 100000
+    },
+    {
+      "id": 5,
+      "name": "Jalaj",
+      "salary": 100000
+    },
+    {
+      "id": 6,
+      "name": "Ayush",
+      "salary": 100000
+    },
+    {
+      "id": 7,
+      "name": "Harsh",
+      "salary": 100000
+    },
+    {
+      "id": 8,
+      "name": "Rajat",
+      "salary": 100000
     }
   ]
 }
