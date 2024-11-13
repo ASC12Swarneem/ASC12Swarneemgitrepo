@@ -1,32 +1,39 @@
-<p>list-emp works!</p>
 <div class="container">
     <br>
-    
-    <h5>Employee Details</h5>
+    <h2 style="text-align: center;">Employee Details</h2>
     <div>
-
-        <div class="table-stripped">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Salary</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let employee of employees">
-                        <td>{{employee.id}}</td>
-                        <td>{{employee.name}}</td>
-                        <td>{{employee.salary}}</td>
-                        <!-- <td><button (click="deleteEmployee(employee)") type="button" class="btn btn-danger">Delete</button></td> -->
-                        <td><button (click)= "deleteEmployee(employee)" class="btn btn-danger">Delete</button></td>
-                        <td><button (click)="updateEmployee(employee.id)" type="button" class="btn btn-warning">Edit</button></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="search-container">
+            <input type="text" 
+                   *ngIf="authService.isLoggedIn()" 
+                   placeholder="Search Employee.." 
+                   class="searchbar" 
+                   id="search"
+                   (input)="employeeSearch()"
+                   [(ngModel)]="searchinpt">
+            <img  src="../../../public/basic-ui_17055449.jpg" alt="Search" (click)="employeeSearch()" class="search-icon" >
         </div>
     </div>
+    <div>
+        <table class="table table-dark table-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of searchEmp">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td><button (click)="deleteEmployee(employee)" class="btn btn-danger">Delete</button></td>
+                    <td><button (click)="updateEmployee(employee.id)" type="button" class="btn btn-warning">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p *ngIf="searchEmp && searchEmp.length === 0">No matching employee found.</p>
 </div>
