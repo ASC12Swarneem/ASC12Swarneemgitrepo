@@ -1,0 +1,96 @@
+/* Main container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    background-color: #f5f5f5; /* Light grey background */
+}
+
+/* Form container styling */
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    box-sizing: border-box;
+    padding-top: 0px;
+}
+
+/* Heading */
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+/* Input field styling */
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Input focus effect */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px;
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Disable button when form is invalid */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Optional: Underline for any signup link (if needed) */
+.signup {
+    text-decoration: underline;
+    font-size: 0.9em;
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.signup:hover {
+    color: #0056b3;
+}

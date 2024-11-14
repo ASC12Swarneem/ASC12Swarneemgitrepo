@@ -1,43 +1,38 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "Swarneem",
+      "id": "1",
+      "name": "Swarneem nandanwar",
       "salary": 100000
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rohit",
       "salary": 100000
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Gaurav",
       "salary": 100000
     },
     {
-      "id": 4,
-      "name": "Mishra",
+      "id": "4",
+      "name": "Harsh Mishra",
       "salary": 100000
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Jalaj",
       "salary": 100000
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Ayush",
       "salary": 100000
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Harsh",
-      "salary": 100000
-    },
-    {
-      "id": 8,
-      "name": "Rajat",
       "salary": 100000
     }
   ]

@@ -63,19 +63,26 @@ export class ListEmpComponent implements OnInit
       }
     }
 
-    employeeSearch(): void {
+    employeeSearch(): void 
+    {
       const searchTerm = this.searchinpt.toLowerCase().trim();
-      if (searchTerm) {
+      if (searchTerm) 
+        {
         // Filter employees by name (case-insensitive)
         this.searchEmp = this.employees.filter(employee =>
           employee.name.toLowerCase().includes(searchTerm)
         );
-        if (this.searchEmp.length > 0) {
+        if (this.searchEmp.length > 0) 
+        {
           console.log("Employee(s) found:", this.searchEmp);
-        } else {
+        } 
+        else 
+        {
           console.log("No matching employee found for search term:", this.searchinpt);
         }
-      } else {
+      } 
+      else 
+      {
         // If search input is empty, reset to show all employees
         this.searchEmp = this.employees;
         console.log("Showing all employees");

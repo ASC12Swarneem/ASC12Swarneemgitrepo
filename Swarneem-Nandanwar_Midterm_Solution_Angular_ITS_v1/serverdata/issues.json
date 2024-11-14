@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "id": "1",
+      "title": "Login page not loading",
+      "description": "Users are unable to load the login page due to a 404 error when trying to access it.",
+      "priority": "High",
+      "status": "Open",
+      "assignee": "Swarneem N",
+      "date": "2024-11-10 14:30"
+    },
+    {
+      "id": "3",
+      "title": "Styling issue on mobile",
+      "description": "The page layout breaks on smaller screens when viewed on mobile devices.",
+      "priority": "Low",
+      "status": "Resolved",
+      "assignee": "Rohit",
+      "date": "2024-11-08 16:30"
+    }
+  ]
+}
