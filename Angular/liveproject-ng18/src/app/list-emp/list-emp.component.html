@@ -5,7 +5,7 @@
         <div class="search-container">
             <input type="text" 
                    *ngIf="authService.isLoggedIn()" 
-                   placeholder="Search Employee.." 
+                   placeholder="Search Employee by Name.." 
                    class="searchbar" 
                    id="search"
                    (input)="employeeSearch()"

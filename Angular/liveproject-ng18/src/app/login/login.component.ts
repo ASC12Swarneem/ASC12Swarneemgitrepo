@@ -9,13 +9,15 @@ import { Router } from "@angular/router";
 })
 
 
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit
+{
     // ! symbol is used to tell the compiler that the variable will be initialized later
     // loginForm! : FormGroup;
     // FormBuilder is a service that provides convenient methods for creating instances of FormControl, FormGroup, and FormArray
 
     loginForm: FormGroup;
-    constructor(private formBuilder: FormBuilder, private router: Router){
+    constructor(private formBuilder: FormBuilder, private router: Router)
+    {
         console.log("Constructor called");
     }
 
@@ -28,10 +30,11 @@ export class LoginComponent implements OnInit{
     }
 
     // On submit for logging in
-    onSubmit() {
+    login() {
         console.log(this.loginForm.value);
         const loginid: string = this.loginForm.get("loginid").value;
         const password: string = this.loginForm.get("password").value;
+
 
         const usersData = JSON.parse(localStorage.getItem("signUpDataArray") || "[]" )
 

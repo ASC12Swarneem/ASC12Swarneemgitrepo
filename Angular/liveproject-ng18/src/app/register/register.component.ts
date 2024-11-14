@@ -19,7 +19,9 @@ export class RegisterComponent
 
   constructor(private formBuilder: FormBuilder,  private router: Router, private employeeService: EmployeeService)
   {
-    this.employeeForm = this.formBuilder.group({
+    this.employeeForm = this.formBuilder.group(
+    {
+      //Validation 
       id: ['', [Validators.required, Validators.pattern("^[0-9]*$")]], 
       name: ['', [Validators.required, Validators.minLength(3)]], 
       salary: ['', [Validators.required, Validators.min(0)]]
@@ -46,7 +48,7 @@ onSubmit()
     alert("Registered successfully")
 
     this.employeeService.createEmployee(employeeData).subscribe(
-      {
+    {
         next:(_Response) =>
         {
           this.router.navigate(['/employees']);

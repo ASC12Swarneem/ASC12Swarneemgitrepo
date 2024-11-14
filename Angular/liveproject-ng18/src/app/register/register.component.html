@@ -4,9 +4,9 @@
   
       <label for="id">Employee ID:</label>
       <input id="id" 
-      type="number" required
-      formControlName="id" 
-      placeholder="Enter Employee ID" />
+             type="number" required
+             formControlName="id" 
+             placeholder="Enter Employee ID" />
       <div *ngIf="employeeForm.get('id').invalid && employeeForm.get('id').touched" 
       class="error">
         Please enter a valid ID.

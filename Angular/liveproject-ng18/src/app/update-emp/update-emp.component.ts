@@ -21,28 +21,21 @@ export class UpdateEmpComponent
 
   }
 
-  // ngOnInit():void
-  // {
-  //   this.id = ++this.route.snapshot.paramMap.get['id'];
-  //   this.employee = new Employee();
-  //   this.employeeService.getEmployeebyID(this.id).subscribe(searchedEmployee =>
-  //   {
-  //     this.employee =searchedEmployee;
-  //   }, error => console.log(error));
-  // }
 
   ngOnInit(): void {
     // Get the employee ID from the route and fetch employee details
     this.id = +this.route.snapshot.paramMap.get('id')!;
     this.employeeService.getEmployeebyID(this.id).subscribe(
-      data => {
+      data => 
+      {
         this.employee = data;
       },
       error => console.log(error)
     );
   }  
 
-  updateEmployee() : void {
+  updateEmployee() : void 
+  {
     this.employeeService.updateEmployee(this.id, this.employee)
     .subscribe(updatedEmployee => 
       {

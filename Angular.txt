@@ -1,0 +1,102 @@
+import {Component} from '@angular/core';
+
+@Component(
+  {
+    selector: 'app-root',
+    template: `
+    <h1>A good app by me🙌!<br>{{message}}</h1>
+    Result of 1+1 = {{1+1}}
+    <br> Original Price : 100
+    <br> Discounted Price : {{100*.9}}
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Designation</th>
+      </tr>
+      <tr>
+        <td>Swarneem</td>
+        <td>23</td>
+        <td>Full Stack Developer</td>
+      </tr>
+      <tr>
+        <td>Rohit</td>
+        <td>22</td>
+        <td>Full Stack Developer</td>
+      </tr>
+      <tr>
+        <td>Gaurav</td>
+        <td>22</td>
+        <td>Full Stack Developer</td>
+      </tr>
+    </table>
+    `,
+    styles: ` h1 { color: red; } 
+    table,th,tr,td{
+    border : 1px solid black;
+    padding: 4px;
+    }
+    `,
+    standalone: true,
+  }
+)
+
+export class AppComponent{
+  message: string = 'Happy Lunch';
+}
+
+
+To print objects using String interpolation
+import {Component} from '@angular/core';
+
+@Component(
+  {
+    selector: 'app-root',
+    template: `
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>City</th>
+      </tr>
+      <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.city}}</td>
+      </tr>
+      <tr>
+        <td>{{user2.name}}</td>
+        <td>{{user2.age}}</td>
+        <td>{{user2.gender}}</td>
+        <td>{{user2.city}}</td>
+      </tr>
+    </table>`,
+    styles: `
+    table,tr,td,th{
+    border : 1px solid black;
+    }
+    `,
+    standalone: true,
+  }
+)
+
+export class AppComponent{
+user = {
+  name:  "Swarneem",
+  age: 23,
+  gender: "Male",
+  city: "Nagpur"
+}
+
+  user2 = {
+  name:  "Rohit",
+  age: 22,
+  gender: "Male",
+  city: "Nagpur"
+}
+}
+
+

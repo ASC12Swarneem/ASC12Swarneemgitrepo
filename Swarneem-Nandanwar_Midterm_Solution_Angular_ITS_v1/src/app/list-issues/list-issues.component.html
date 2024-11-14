@@ -1,0 +1,48 @@
+<div class="container">
+    <br>
+    <h2 style="text-align: center;">List of Issues</h2>
+    <div>
+      <div class="search-container">
+        <input type="text" 
+               placeholder="Search Issue" 
+               class="searchbar" 
+               id="search"
+               (input)="issueSearch()" 
+               [(ngModel)]="searchinpt">
+        <img  src="../../../public/basic-ui_17055449.jpg" alt="Search" (click)="issueSearch()" class="search-icon">
+      </div>
+    </div>
+  
+    <div>
+      <table class="table table-dark table-sm">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Assignee</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let issue of searchIssue">
+            <td>{{issue.id}}</td>
+            <td>{{issue.title}}</td>
+            <td>{{issue.description}}</td>
+            <td>{{issue.assignee}}</td>
+            <td>{{issue.priority}}</td>
+            <td>{{issue.status}}</td>
+            <td>{{issue.date}}</td>
+            <td><button (click)="deleteIssue(issue)" class="btn btn-danger">Delete</button></td>
+            <td><button (click)="editIssue(issue.id)" type="button" class="btn btn-warning">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p *ngIf="searchIssue && searchIssue.length === 0">No matching issue found.</p>
+  </div>
+  
