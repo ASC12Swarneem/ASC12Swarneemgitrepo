@@ -17,6 +17,24 @@
       "status": "Resolved",
       "assignee": "Rohit",
       "date": "2024-11-08 16:30"
+    },
+    {
+      "id": "32e9",
+      "title": "aadjAFD",
+      "description": "ADLADJLAJDJADJAJFJALFAFJAFALFNLANFLANFLAJFLAJFLAJFLJ",
+      "assignee": "user",
+      "priority": "Medium",
+      "status": "Open",
+      "date": "2024-11-16"
+    },
+    {
+      "id": "2cf3",
+      "title": "Dashboard issue",
+      "description": "Issue with the dashboard, not displaying the issues that are being added.",
+      "assignee": "Ayush",
+      "priority": "High",
+      "status": "In Progress",
+      "date": "2024-11-21"
     }
   ]
 }
