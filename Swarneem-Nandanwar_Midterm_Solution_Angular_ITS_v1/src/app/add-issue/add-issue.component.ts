@@ -3,11 +3,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IssueService } from '../services/issues.service'; 
 import { Router } from '@angular/router';
 import { Issues } from '../../model/issues.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-issue',
   templateUrl: './add-issue.component.html',
-  styleUrl: './add-issue.component.css'
+  styleUrl: './add-issue.component.css',
+  providers: [DatePipe]
 })
 
 export class AddIssueComponent implements OnInit
@@ -16,7 +18,7 @@ export class AddIssueComponent implements OnInit
 
   ngOnInit(): void {}
 
-  constructor(private issueService: IssueService, private router: Router) 
+  constructor(private issueService: IssueService, private router: Router, private datePipe: DatePipe) 
   {
     this.issueForm = new FormGroup
     ({

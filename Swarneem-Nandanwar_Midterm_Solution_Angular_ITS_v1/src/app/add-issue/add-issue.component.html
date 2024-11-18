@@ -3,7 +3,7 @@
       <h2>Add New Issue</h2>
 
       <label for="id">ID:</label>
-      <input id="id" type="number" formControlName="id" placeholder="Enter ID" />
+      <input id="id" type="number" name="id" placeholder="Enter ID" />
       <div *ngIf="issueForm.get('id')?.invalid && issueForm.get('id')?.touched" class="error">
         Title is required (min 3 characters).
       </div>
