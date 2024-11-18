@@ -13,10 +13,10 @@
       "id": "3",
       "title": "Styling issue on mobile",
       "description": "The page layout breaks on smaller screens when viewed on mobile devices.",
-      "priority": "Low",
-      "status": "Resolved",
+      "priority": "High",
+      "status": "Closed",
       "assignee": "Rohit",
-      "date": "2024-11-08 16:30"
+      "date": "2024-11-30"
     },
     {
       "id": "32e9",
@@ -35,6 +35,42 @@
       "priority": "High",
       "status": "In Progress",
       "date": "2024-11-21"
+    },
+    {
+      "id": "1ef3",
+      "title": "asfdafaf",
+      "description": "adsfsafsafsaf adfAEFAE F W QFDEA",
+      "assignee": "DSFSADF",
+      "priority": "Medium",
+      "status": "In Progress",
+      "date": "2024-11-15T10:10:45.419Z"
+    },
+    {
+      "id": "f46f",
+      "title": "DSSAD",
+      "description": "ASDADSSAC",
+      "assignee": "SAD",
+      "priority": "Low",
+      "status": "Open",
+      "date": "2024-11-15T10:11:40.874Z"
+    },
+    {
+      "id": "6a6c",
+      "title": "hjggkj",
+      "description": "sdf",
+      "assignee": "kjkhk",
+      "priority": "High",
+      "status": "Open",
+      "date": "2024-11-01"
+    },
+    {
+      "id": "0a78",
+      "title": "dsfsf",
+      "description": "dsfcsdfcsfc",
+      "assignee": "adc",
+      "priority": "Medium",
+      "status": "In Progress",
+      "date": "2024-11-15T11:44:53.672Z"
     }
   ]
 }
