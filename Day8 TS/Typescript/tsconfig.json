@@ -1,8 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "es2018", //Version of ECMA script that the code should be compiled to
-        "outDir": "./dist", //TS file is given to compiler and it is compiled into JS 2018 version and this is the directiory where files are stored
-        "rootDir": "./src", //S
-        "module": "CommonJS"
-    }
-}
