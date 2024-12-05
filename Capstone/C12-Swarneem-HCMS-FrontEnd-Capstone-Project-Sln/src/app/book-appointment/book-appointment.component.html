@@ -1,0 +1,83 @@
+<!-- <p>book-appointment works!</p> -->
+<div class="outer-appointment-container" style=" background-color: #EBFBFF; display: flex; padding: 25px;">
+  <div style="border-right: 2px solid #007C9D; width: 65%; margin-right: 20px; padding-left: 30px;">
+    <section class="best-doctors-section">
+        <h2>We Have the Best Doctors</h2>
+        <p>Our team of highly qualified and experienced doctors is here to provide you with the best healthcare services.</p>
+        <p>Book your appointment now!</p>    
+       </section>
+
+       <img src="Doctors.png" alt="">
+  </div>
+
+  <div>
+    <form class="appointment-container" [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
+      <h2>Book an Appointment</h2>
+
+      <div class="form-group">
+        <label for="patient-name">Patient Name:</label>
+        <input id="patient-name" type="text" formControlName="patientName" placeholder="Enter Patient Name" required />
+      </div>
+      <div *ngIf="appointmentForm.get('patientName')?.touched && appointmentForm.get('patientName')?.invalid">
+        <small class="error">Patient name is required.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input id="age" type="number" formControlName="patientAge" placeholder="Enter Age" required />
+    </div>
+    <div *ngIf="appointmentForm.get('patientAge')?.touched && appointmentForm.get('patientAge')?.invalid">
+          <small class="error">Age is required and must be a number.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input id="weight" type="number" formControlName="patientWeight" placeholder="Enter Weight" required />
+      </div>
+      <div *ngIf="appointmentForm.get('patientWeight')?.touched && appointmentForm.get('patientWeight')?.invalid">
+        <small class="error">Weight is required and must be a number.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <select id="city" formControlName="patientCity" required>
+          <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+      </div>
+      <div *ngIf="appointmentForm.get('patientCity')?.touched && appointmentForm.get('patientCity')?.invalid">
+        <small class="error">Please select a city.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <select id="department" formControlName="department" (change)="updateDoctors()" required>
+          <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+        </select>
+      </div>
+      <div *ngIf="appointmentForm.get('department')?.touched && appointmentForm.get('department')?.invalid">
+        <small class="error">Please select a department.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="doctor">Doctor:</label>
+        <select id="doctor" formControlName="doctor" required>
+          <option *ngFor="let doctor of filteredDoctors" [value]="doctor">{{ doctor }}</option>
+        </select>
+      </div>
+      <div *ngIf="appointmentForm.get('doctor')?.touched && appointmentForm.get('doctor')?.invalid">
+        <small class="error">Please select a doctor.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="appointment-date">Date of Appointment:</label>
+        <input id="appointment-date" type="date" formControlName="appointmentDate" required />
+      </div>
+      <div *ngIf="appointmentForm.get('appointmentDate')?.touched && appointmentForm.get('appointmentDate')?.invalid">
+        <small class="error">Please select a date for the appointment.</small>
+      </div>
+
+      <button type="submit">{{ isEditMode ? 'Update Appointment' : 'Book Appointment' }}
+        </button>
+    </form>
+  </div>
+</div>

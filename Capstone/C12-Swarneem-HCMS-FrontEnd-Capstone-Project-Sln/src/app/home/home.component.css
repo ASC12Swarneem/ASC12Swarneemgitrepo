@@ -1,0 +1,38 @@
+.carousel-images{
+  height: 400px !important;
+}
+
+.whyimagediv{
+  padding: 50px;
+}
+
+.image_icons{
+  height: 76px; 
+  width: 76px;
+  padding: 12px;
+  box-shadow: 0px 0px 30px #a2e1f1;
+  border-radius: 9px;
+}
+
+.info_para{
+  text-align: justify; 
+  font-family: sans-serif; 
+  padding: 10px; 
+  color: #51565D; 
+  line-height: 30px;
+}
+
+.btn-quick-book-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 42px;
+  background: #ed803a;
+  display: block;
+  font-size: 16px !important;
+  z-index: 99;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 8px;
+  text-transform: inherit;
+}

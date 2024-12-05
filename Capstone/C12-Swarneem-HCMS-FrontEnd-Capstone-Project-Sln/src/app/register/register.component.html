@@ -1,0 +1,106 @@
+<div class="register-container">
+    <form (ngSubmit)="register()" [formGroup]="signUpForm">
+      <h2>Sign Up As Admin</h2>
+  
+      <div style="display: flex;">
+        <div class="left-side-label">
+          <label for="fname">First Name:</label>
+          <input
+            id="fname"
+            type="text"
+            formControlName="firstName"
+            placeholder="Enter your first name"
+          />
+          <div *ngIf="signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched">
+            <small class="errorMessage" *ngIf="signUpForm.get('firstName')?.errors?.['required']">First Name is required.</small>
+          </div>
+        </div>
+  
+        <div class="right-side-label" style="margin-left: 12px;">
+          <label for="lname">Last Name:</label>
+          <input
+            id="lname"
+            type="text"
+            formControlName="lastName"
+            placeholder="Enter your last name"
+          />
+          <div *ngIf="signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched">
+            <small class="errorMessage" *ngIf="signUpForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
+          </div>
+        </div>
+      </div>
+  
+      <div style="display: flex;">
+        <div class="left-side-label">
+          <label for="loginid">Email:</label>
+          <input
+            id="loginid"
+            type="email"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+          <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+            <small class="errorMessage" *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required.</small>
+            <small class="errorMessage" *ngIf="signUpForm.get('email')?.errors?.['email']">Invalid email format.</small>
+          </div>
+        </div>
+  
+        <div class="right-side-label" style="margin-left: 16px;">
+          <label for="phoneNo">Contact:</label>
+          <input
+            id="phoneNo"
+            type="number"
+            formControlName="phoneNo"
+            placeholder="Enter your contact number"
+          />
+          <div *ngIf="signUpForm.get('phoneNo')?.invalid && signUpForm.get('phoneNo')?.touched">
+            <small class="errorMessage" *ngIf="signUpForm.get('phoneNo')?.errors?.['required']">Phone number is required.</small>
+            <small class="errorMessage" *ngIf="signUpForm.get('phoneNo')?.errors?.['pattern']">Invalid phone number.</small>
+          </div>
+        </div>
+      </div>
+  
+      <div style="display: flex;">
+        <div class="left-side-label">
+          <label for="password">Password:</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+            <small class="errorMessage" *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.</small>
+            <small class="errorMessage" *ngIf="signUpForm.get('password')?.errors?.['pattern']">Password must be strong.</small>
+            <small class="errorMessage" *ngIf="signUpForm.get('password')?.errors?.['uppercase']">
+                Password must contain at least one uppercase letter.
+              </small>
+            <small class="errorMessage" *ngIf="signUpForm.get('password')?.errors?.['digit']" >Password must contain at least one number.</small>
+            <small class="errorMessage" *ngIf="signUpForm.get('password')?.errors?.['specialChar']">
+                Password must contain at least one special character (e.g., !#$%^&*).
+              </small>
+              <small class="errorMessage" *ngIf="signUpForm.get('password')?.errors?.['length']">
+                Password must be between 8 and 12 characters long.
+              </small>
+        </div>
+        </div>
+  
+        <div class="right-side-label" style="margin-left: 16px;">
+          <label for="cpassword">Confirm Password:</label>
+          <input
+            id="cpassword"
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirm your password"
+          />
+          <div class="errorMessage" *ngIf="signUpForm.errors?.['passwordMismatch'] && signUpForm.get('confirmPassword')?.touched">
+            <small>Passwords do not match.</small>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit">Register as Admin</button>
+  
+      <a class="register-link" routerLink="/">Already have an account? Login</a>
+    </form>
+  </div>
