@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AdminService } from '../services/admin.service'; // Import AdminService
 import { passwordStrengthValidator } from './password-strength.validator';
 
 @Component({
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
+    private adminService: AdminService, 
     private router: Router
   ) {}
 
@@ -29,18 +29,18 @@ export class RegisterComponent implements OnInit {
           '',
           [
             Validators.required,
-            passwordStrengthValidator(), // Use the custom password strength validator
+            passwordStrengthValidator(), // Custom password validator
           ],
         ],
         confirmPassword: ['', Validators.required],
-      },
+      }, 
       {
         validators: this.passwordMatchValidator,
       }
     );
   }
 
-  // Password match validator to check if passwords match
+  // Validator to check if password and confirmPassword match
   passwordMatchValidator(form: FormGroup): { [key: string]: boolean } | null {
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
@@ -49,18 +49,17 @@ export class RegisterComponent implements OnInit {
     }
     return null;
   }
-
-  // Register function to submit the form data
   register(): void {
     if (this.signUpForm.invalid) {
       alert('Please fill the form correctly.');
       return;
     }
+    this.passwordMatchValidator;
 
-    const adminData = this.signUpForm.value; // Get form data
-    delete adminData.confirmPassword; // Remove confirmPassword before sending
+    const adminData = this.signUpForm.value; // Retrieve form data
+    // delete adminData.confirmPassword; // Remove confirmPassword before sending to backend
 
-    this.http.post('http://localhost:3000/admin', adminData).subscribe({
+    this.adminService.addAdmin(adminData).subscribe({
       next: () => {
         alert('Registration successful!');
         this.router.navigate(['/']);

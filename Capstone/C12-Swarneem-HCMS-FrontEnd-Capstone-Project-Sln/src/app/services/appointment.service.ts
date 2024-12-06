@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 })
 
 export class AppointmentService{
-    private appointmentUrl = 'http://localhost:3001/appointments';
+    private appointmentUrl = 'http://localhost:8080/api/appointments';
 
     constructor (private http:HttpClient){}
 
@@ -26,11 +26,12 @@ export class AppointmentService{
         return this.http.put<any>(`${this.appointmentUrl}/${id}`, updatedAppointment);
     }
 
-    appointmentEnroll(appointment:Appointment):Observable<any>{
+    //Post Maooing
+    addAppointment(appointment:Appointment):Observable<any>{
         return this.http.post<any>(this.appointmentUrl,appointment)
     }
 
-    updateIssue(id: number, appointment: Appointment): Observable<Appointment> 
+    updateAppointment(id: number, appointment: Appointment): Observable<Appointment> 
     {
         return this.http.put<Appointment>(`${this.appointmentUrl}/${id}`, appointment);
     }

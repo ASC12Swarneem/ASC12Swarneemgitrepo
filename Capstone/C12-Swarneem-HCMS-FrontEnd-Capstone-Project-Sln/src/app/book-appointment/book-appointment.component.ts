@@ -102,7 +102,7 @@ export class BookAppointmentComponent implements OnInit {
         }
       });
     } else {
-      this.appointmentService.appointmentEnroll(appointmentData).subscribe({
+      this.appointmentService.addAppointment(appointmentData).subscribe({
         next: () => {
           alert('Appointment created successfully!');
           this.router.navigate(['/manage-appointment']);
