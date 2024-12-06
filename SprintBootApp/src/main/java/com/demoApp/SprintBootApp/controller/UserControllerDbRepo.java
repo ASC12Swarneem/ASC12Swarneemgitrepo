@@ -27,16 +27,5 @@ public class UserControllerDbRepo {
         List<User> users = userService.getAllUser();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
-//    @GetMapping
-//    public List getUserList() {
-////		List<Employee> employeeList = null;
-////        employeeList = employeeRepository.findAll();
-////        return employeeList;
-//        return userRepository.findAll();
-//    }
 
-//    @GetMapping
-//    public ResponseEntity<List<User>> getalluser(){
-//        List<User> users = User
-//    }
 }
