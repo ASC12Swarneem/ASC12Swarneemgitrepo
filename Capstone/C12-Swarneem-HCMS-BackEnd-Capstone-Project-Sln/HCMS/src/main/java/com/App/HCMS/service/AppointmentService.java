@@ -24,6 +24,21 @@ public class AppointmentService {
         return appointmentRepository.save(appointmentEntity);
     }
 
+    public void deleteAppointment(String id){
+        appointmentRepository.deleteById(id);
+    }
 
+    public AppointmentEntity getAppointmentById(String appointmentId) {
+        return appointmentRepository.findById(appointmentId)
+                .orElseThrow(() -> new RuntimeException("Match not found with id: " + appointmentId));
+    }
 
+    public AppointmentEntity updateAppointment(String id, AppointmentEntity updatedAppointment) {
+        updatedAppointment.setId(id); // Ensure the ID is set
+        return appointmentRepository.save(updatedAppointment); // Save and update the match
+    }
+
+//    public List<AppointmentEntity> searchAppointment(String query) {
+//        return appointmentRepository.findByNameContainingIgnoreCase(query);
+//    }
 }

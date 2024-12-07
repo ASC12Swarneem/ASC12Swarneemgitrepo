@@ -9,8 +9,7 @@ import java.time.LocalDate;
 public class AppointmentEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     @Column(name = "patient_name", nullable = false)
     private String patientName;
@@ -37,7 +36,8 @@ public class AppointmentEntity {
     public AppointmentEntity() {
     }
 
-    public AppointmentEntity(String patientName, Integer patientAge, Double patientWeight, String patientCity, String department, String doctor, LocalDate appointmentDate) {
+    public AppointmentEntity(String id ,String patientName, Integer patientAge, Double patientWeight, String patientCity, String department, String doctor, LocalDate appointmentDate) {
+        this.id = id;
         this.patientName = patientName;
         this.patientAge = patientAge;
         this.patientWeight = patientWeight;
@@ -48,11 +48,11 @@ public class AppointmentEntity {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

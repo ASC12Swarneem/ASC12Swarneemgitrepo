@@ -29,7 +29,7 @@ export class ManageAppointmentsComponent implements OnInit{
     });    
   }
 
-  editAppointment(appointmentId: number | undefined):void{
+  editAppointment(appointmentId: string | undefined):void{
     if (appointmentId !== undefined) {
       this.router.navigate(['book-appointment', appointmentId]);
     }
