@@ -46,10 +46,22 @@ public class AppointmentController {
 
     }
 
+//    @GetMapping("/{id}")
+//    public AppointmentEntity getAppointmentById(@PathVariable String id) {
+//        return appointmentService.getAppointmentById(id);
+//    }
+
+
+
     @GetMapping("/{id}")
-    public AppointmentEntity getAppointmentById(@PathVariable String id) {
-        return appointmentService.getAppointmentById(id);
+    public ResponseEntity<AppointmentEntity> getAppointmentById(@PathVariable String id) {
+        AppointmentEntity appointment = appointmentService.getAppointmentById(id);
+        if (appointment == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Return 404 if not found
+        }
+        return ResponseEntity.ok(appointment);
     }
+
 
     @PutMapping("/{id}")
     public AppointmentEntity updateAppointment(@PathVariable String id, @RequestBody AppointmentEntity updatedAppointment) {
