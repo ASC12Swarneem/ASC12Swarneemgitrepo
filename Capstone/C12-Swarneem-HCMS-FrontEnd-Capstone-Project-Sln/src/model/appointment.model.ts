@@ -1,5 +1,5 @@
 export class Appointment {
-  id?: number;
+  id?: string;
   patientName?: string;
   patientAge?: number;
   patientWeight?: number;

@@ -65,6 +65,7 @@ export class BookAppointmentComponent implements OnInit {
     this.updateDoctors(); 
   }
 
+
   updateDoctors(): void {
     const selectedDepartment = this.appointmentForm.get('department')?.value;
     this.filteredDoctors = selectedDepartment ? this.doctors[selectedDepartment] : [];
@@ -72,10 +73,10 @@ export class BookAppointmentComponent implements OnInit {
   }
 
   loadAppointmentData(id: string): void {
+    console.log('Loading appointment with ID:', id);
     this.appointmentService.getAppointmentById(id).subscribe({
       next: (appointment) => {
         this.appointmentForm.patchValue(appointment);
-        this.updateDoctors(); 
       },
       error: (err) => {
         console.error('Failed to load appointment data:', err);
@@ -88,10 +89,11 @@ export class BookAppointmentComponent implements OnInit {
       alert('Please fill all the required fields.');
       return;
     }
-
+  
     const appointmentData = this.appointmentForm.value;
-
+  
     if (this.isEditMode) {
+      // Update existing appointment
       this.appointmentService.editAppointment(this.appointmentId!, appointmentData).subscribe({
         next: () => {
           alert('Appointment updated successfully!');
@@ -102,7 +104,13 @@ export class BookAppointmentComponent implements OnInit {
         }
       });
     } else {
-      this.appointmentService.addAppointment(appointmentData).subscribe({
+      // Generate and assign unique ID for new appointment
+      
+           const formData = {
+        ...this.appointmentForm.value
+      };
+  
+      this.appointmentService.addAppointment(formData).subscribe({
         next: () => {
           alert('Appointment created successfully!');
           this.router.navigate(['/manage-appointment']);
@@ -113,4 +121,5 @@ export class BookAppointmentComponent implements OnInit {
       });
     }
   }
+  
 }

@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 })
 
 export class AppointmentService{
+    private currentNumber: number = 0;
     private appointmentUrl = 'http://localhost:8080/api/appointments';
 
     constructor (private http:HttpClient){}
@@ -19,7 +20,7 @@ export class AppointmentService{
 
     getAppointmentById(id: string): Observable<Appointment> {
         return this.http.get<Appointment>(`${this.appointmentUrl}/${id}`);
-    }
+    }   
 
 
     editAppointment(id: string, updatedAppointment: Appointment): Observable<any> {
@@ -37,7 +38,7 @@ export class AppointmentService{
     }
 
     
-    deleteAppointment(id: number): Observable<any> {
+    deleteAppointment(id: string): Observable<any> {
         const url = `${this.appointmentUrl}/${id}`; 
         return this.http.delete<any>(url);
     }

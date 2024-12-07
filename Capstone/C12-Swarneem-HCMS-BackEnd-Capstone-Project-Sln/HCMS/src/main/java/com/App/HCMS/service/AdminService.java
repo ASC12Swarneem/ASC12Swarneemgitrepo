@@ -24,7 +24,7 @@ public class AdminService {
         return adminRepository.save(adminEntity);
     }
 
-    public AdminEntity updateAdminEntity(Long id, AdminEntity updatedAdminEntity) {
+    public AdminEntity updateAdminEntity(String id, AdminEntity updatedAdminEntity) {
         AdminEntity existingAdminEntity = adminRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Admin not found!"));
 
@@ -36,13 +36,13 @@ public class AdminService {
         return adminRepository.save(existingAdminEntity);
     }
 
-    public AdminEntity getAdminById(Long id) {
+    public AdminEntity getAdminById(String id) {
         return adminRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Admin not found with ID: " + id));
     }
 
 
-    public void deleteAdminEntity(Long id) {
+    public void deleteAdminEntity(String id) {
 
     }
 

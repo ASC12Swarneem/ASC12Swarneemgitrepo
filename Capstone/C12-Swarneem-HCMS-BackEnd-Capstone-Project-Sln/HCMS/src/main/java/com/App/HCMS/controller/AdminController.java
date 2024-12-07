@@ -22,7 +22,7 @@ public class AdminController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AdminEntity> getAdminById(@PathVariable Long id) {
+    public ResponseEntity<AdminEntity> getAdminById(@PathVariable String id) {
         AdminEntity adminEntity = adminService.getAdminById(id);
         return ResponseEntity.ok(adminEntity);
     }
@@ -34,13 +34,13 @@ public class AdminController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AdminEntity> updateAdmin(@PathVariable Long id, @RequestBody AdminEntity adminEntity) {
+    public ResponseEntity<AdminEntity> updateAdmin(@PathVariable String id, @RequestBody AdminEntity adminEntity) {
         AdminEntity updatedAdminEntity = adminService.updateAdminEntity(id, adminEntity);
         return ResponseEntity.ok(updatedAdminEntity);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAdmin(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteAdmin(@PathVariable String id) {
         adminService.deleteAdminEntity(id);
         return ResponseEntity.noContent().build();
     }
