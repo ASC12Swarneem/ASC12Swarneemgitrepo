@@ -4,7 +4,6 @@ import com.App.HCMS.entity.AppointmentEntity;
 import com.App.HCMS.repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -34,11 +33,7 @@ public class AppointmentService {
     }
 
     public AppointmentEntity updateAppointment(String id, AppointmentEntity updatedAppointment) {
-        updatedAppointment.setId(id); // Ensure the ID is set
-        return appointmentRepository.save(updatedAppointment); // Save and update the match
+        updatedAppointment.setId(id);
+        return appointmentRepository.save(updatedAppointment);
     }
-
-//    public List<AppointmentEntity> searchAppointment(String query) {
-//        return appointmentRepository.findByNameContainingIgnoreCase(query);
-//    }
 }

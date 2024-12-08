@@ -34,7 +34,7 @@ export class BookAppointmentComponent implements OnInit {
 
   filteredDoctors: string[] = [];
   appointmentId!: string | null;
-  isEditMode: boolean = false; 
+  isUpdateMode: boolean = false; 
 
   constructor(
     private fb: FormBuilder,
@@ -57,27 +57,52 @@ export class BookAppointmentComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.appointmentId = params.get('id');
       if (this.appointmentId) {
-        this.isEditMode = true;
+        this.isUpdateMode = true;
         this.loadAppointmentData(this.appointmentId);
       }
     });
 
     this.updateDoctors(); 
+
+    this.appointmentForm.get('department')?.valueChanges.subscribe(() => {
+      this.updateDoctors();
+    });
+    
   }
 
+
+  // updateDoctors(): void {
+  //   const selectedDepartment = this.appointmentForm.get('department')?.value;
+  //   this.filteredDoctors = selectedDepartment ? this.doctors[selectedDepartment] : [];
+  //   this.appointmentForm.get('doctor')?.setValue('');
+  // }
 
   updateDoctors(): void {
     const selectedDepartment = this.appointmentForm.get('department')?.value;
     this.filteredDoctors = selectedDepartment ? this.doctors[selectedDepartment] : [];
-    this.appointmentForm.get('doctor')?.setValue('');
+  
+    // Check if the current doctor value is valid for the filtered list
+    const currentDoctor = this.appointmentForm.get('doctor')?.value;
+    if (!this.filteredDoctors.includes(currentDoctor)) {
+      this.appointmentForm.get('doctor')?.setValue(''); // Reset doctor if it's not valid
+    }
   }
+
 
   loadAppointmentData(id: string): void {
     console.log('Loading appointment with ID:', id);
     this.appointmentService.getAppointmentById(id).subscribe({
       next: (appointment) => {
         this.appointmentForm.patchValue(appointment);
+      // this.updateDoctors;
+      patientName : appointment.patientName;
+      patientAge : appointment.patientAge;    
+      patientWeight : appointment.patientWeight;
+      patientCity : appointment.patientCity;
+      department: appointment.department;
+      appointmentDate : appointment.appointmentDate
       },
+      
       error: (err) => {
         console.error('Failed to load appointment data:', err);
       }
@@ -92,7 +117,7 @@ export class BookAppointmentComponent implements OnInit {
   
     const appointmentData = this.appointmentForm.value;
   
-    if (this.isEditMode) {
+    if (this.isUpdateMode) {
       // Update existing appointment
       this.appointmentService.editAppointment(this.appointmentId!, appointmentData).subscribe({
         next: () => {

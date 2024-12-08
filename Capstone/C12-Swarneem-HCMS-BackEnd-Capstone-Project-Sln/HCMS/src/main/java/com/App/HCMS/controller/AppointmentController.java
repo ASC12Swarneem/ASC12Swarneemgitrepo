@@ -29,6 +29,13 @@ public class AppointmentController {
         return new ResponseEntity<>(appointmentEntities, HttpStatus.OK);
     }
 
+    private String generateUniqueAppointmentId() {
+        long timestamp = System.currentTimeMillis();
+        String idd = "A" + String.format("%04d", count);
+        count++;
+        return idd;
+    }
+
     @PostMapping
     public ResponseEntity<AppointmentEntity> createAppointment(@RequestBody AppointmentEntity appointmentEntity) {
         if (appointmentEntity.getId() == null || appointmentEntity.getId().isEmpty()) {
@@ -38,39 +45,22 @@ public class AppointmentController {
         return new ResponseEntity<>(savedAppointment, HttpStatus.CREATED);
     }
 
-    private String generateUniqueAppointmentId() {
-        long timestamp = System.currentTimeMillis();
-        String idd = "A" + String.format("%04d", count);
-        count++;
-        return idd;
-
-    }
-
-//    @GetMapping("/{id}")
-//    public AppointmentEntity getAppointmentById(@PathVariable String id) {
-//        return appointmentService.getAppointmentById(id);
-//    }
-
-
-
-    @GetMapping("/{id}")
-    public ResponseEntity<AppointmentEntity> getAppointmentById(@PathVariable String id) {
-        AppointmentEntity appointment = appointmentService.getAppointmentById(id);
-        if (appointment == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Return 404 if not found
-        }
-        return ResponseEntity.ok(appointment);
-    }
-
-
     @PutMapping("/{id}")
     public AppointmentEntity updateAppointment(@PathVariable String id, @RequestBody AppointmentEntity updatedAppointment) {
         return appointmentService.updateAppointment(id, updatedAppointment);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<AppointmentEntity> getAppointmentById(@PathVariable String id) {
+        AppointmentEntity appointment = appointmentService.getAppointmentById(id);
+        if (appointment == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(appointment);
+    }
+
     @DeleteMapping("/{id}")
     private void deleteAppointment(@PathVariable String id){
-//        return appointmentService.deleteAppointment(id);
         appointmentService.deleteAppointment(id);
     }
 }
