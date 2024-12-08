@@ -1,5 +1,18 @@
-<table class="appointment-table">
+<div class="searchbox">
+    <input type="text" 
+            name="searchbox" 
+            id="searchbox" 
+            placeholder="Search Appointment by ID"
+            [(ngModel)]="searchQuery" 
+                (input)="filterAppointments(searchQuery)"
+    >
+</div>
+<table class="appointment-table">    
+    
     <thead>
+        <!-- <div style="border: 2px solid red; height: 50px;"></div>
+          -->
+        
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -14,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let appointment of appointments">
+      <tr *ngFor="let appointment of filteredAppointments">
         <td>{{ appointment.id }}</td>
         <td>{{ appointment.patientName }}</td>
         <td>{{ appointment.patientAge }}</td>

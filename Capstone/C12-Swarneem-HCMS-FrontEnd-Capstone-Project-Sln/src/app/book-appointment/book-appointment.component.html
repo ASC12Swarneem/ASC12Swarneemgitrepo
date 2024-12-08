@@ -12,8 +12,8 @@
 
   <div>
     <form class="appointment-container" [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
-      <h2>Book an Appointment</h2>
-
+      <!-- <h2>Book an Appointment</h2> -->
+        <h2>{{ isUpdateMode ? 'Update an Appointment' : 'Book an Appointment' }}</h2>
       <div class="form-group">
         <label for="patient-name">Patient Name:</label>
         <input id="patient-name" type="text" formControlName="patientName" placeholder="Enter Patient Name" required />
@@ -76,7 +76,7 @@
         <small class="error">Please select a date for the appointment.</small>
       </div>
 
-      <button type="submit">{{ isEditMode ? 'Update Appointment' : 'Book Appointment' }}
+      <button type="submit">{{ isUpdateMode ? 'Update Appointment' : 'Book Appointment' }}
         </button>
     </form>
   </div>

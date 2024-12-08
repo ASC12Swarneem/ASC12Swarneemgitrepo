@@ -32,7 +32,6 @@ public class AppointmentEntity {
     @Column(name = "appointment_date")
     private LocalDate appointmentDate;
 
-    // Constructors
     public AppointmentEntity() {
     }
 
