@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class AdminEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -28,10 +28,10 @@ public class AdminEntity {
     private String confirmPassword;
 
     // Getters and Setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getFirstName() {

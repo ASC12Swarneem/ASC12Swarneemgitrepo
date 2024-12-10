@@ -22,7 +22,7 @@ public class AdminController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AdminEntity> getAdminById(@PathVariable String id) {
+    public ResponseEntity<AdminEntity> getAdminById(@PathVariable Long id) {
         AdminEntity adminEntity = adminService.getAdminById(id);
         return ResponseEntity.ok(adminEntity);
     }
@@ -34,7 +34,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/{id}")
-    private void deleteAdmin(@PathVariable String id){
+    private void deleteAdmin(@PathVariable Long id){
         adminService.deleteAdminEntity(id);
     }
 }

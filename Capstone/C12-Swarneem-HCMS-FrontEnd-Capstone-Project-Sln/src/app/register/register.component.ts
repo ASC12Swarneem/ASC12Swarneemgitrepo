@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
           '',
           [
             Validators.required,
-            passwordStrengthValidator(), // Custom password validator
+            passwordStrengthValidator(),
           ],
         ],
         confirmPassword: ['', Validators.required],

@@ -102,7 +102,7 @@ export class BookAppointmentComponent implements OnInit {
 
   bookAppointment(): void {
     if (this.appointmentForm.invalid) {
-      alert('Please fill all the required fields.');
+      // alert('Please fill all the required fields.');
       return;
     }
   
@@ -111,7 +111,7 @@ export class BookAppointmentComponent implements OnInit {
     if (this.isUpdateMode) {
       this.appointmentService.editAppointment(this.appointmentId!, appointmentData).subscribe({
         next: () => {
-          alert('Appointment updated successfully!');
+          // alert('Appointment updated successfully!');
           this.router.navigate(['/manage-appointment']);
         },
         error: (err) => {
