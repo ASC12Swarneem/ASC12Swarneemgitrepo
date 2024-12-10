@@ -1,29 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../../model/appointment.model';
 import { AppointmentService } from '../services/appointment.service';
-import { SharedService } from '../services/shared.service'; // Import the shared service
+import { SharedService } from '../services/shared.service'; 
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-appointments',
   templateUrl: './manage-appointments.component.html',
-  styleUrls: ['./manage-appointments.component.css'] // Fixed typo here
+  styleUrls: ['./manage-appointments.component.css']
 })
 export class ManageAppointmentsComponent implements OnInit {
   appointments: Appointment[] = [];
-  filteredAppointments: Appointment[] = []; // For displaying filtered results
+  filteredAppointments: Appointment[] = []; 
   searchQuery: string = '';
 
   constructor(
     private appointmentService: AppointmentService,
-    private sharedService: SharedService, // Inject the shared service
+    private sharedService: SharedService, 
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.loadAppointments();
-
-    // Subscribe to search query changes from the SharedService
     this.sharedService.searchQuery$.subscribe((query) => {
       this.filterAppointments(query);
     });
@@ -33,7 +31,7 @@ export class ManageAppointmentsComponent implements OnInit {
     this.appointmentService.getAppointments().subscribe({
       next: (data) => {
         this.appointments = data;
-        this.filteredAppointments = data; // Initialize with all appointments
+        this.filteredAppointments = data;
       },
       error: (err) => {
         console.error('Failed to load appointments:', err);
@@ -43,7 +41,7 @@ export class ManageAppointmentsComponent implements OnInit {
 
   filterAppointments(query: string): void {
     if (!query) {
-      this.filteredAppointments = this.appointments; // Reset to all appointments
+      this.filteredAppointments = this.appointments;
     } else {
       this.filteredAppointments = this.appointments.filter((appointment) =>
         appointment.id?.toLowerCase().includes(query.toLowerCase())

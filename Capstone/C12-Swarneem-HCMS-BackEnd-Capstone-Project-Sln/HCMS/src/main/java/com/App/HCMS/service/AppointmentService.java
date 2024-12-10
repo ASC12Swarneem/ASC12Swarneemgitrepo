@@ -47,7 +47,6 @@ public class AppointmentService {
             int lastCounter = Integer.parseInt(lastId.substring(1));
             counter = lastCounter+1;
         }
-
         return "A"+ String.format("%04d", counter);
     }
 }

@@ -36,7 +36,6 @@ export class LoginComponent {
 
   login(): void {
     if (this.isLockedOut) {
-      alert(`Please wait ${this.lockoutTime} seconds before trying again.`);
       return;
     }
 

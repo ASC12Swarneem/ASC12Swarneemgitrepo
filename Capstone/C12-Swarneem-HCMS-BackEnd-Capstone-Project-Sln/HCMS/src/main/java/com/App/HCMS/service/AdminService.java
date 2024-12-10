@@ -9,11 +9,6 @@ import java.util.List;
 
 @Service
 public class AdminService {
-
-
-    private static final int MAX_FAILED_ATTEMPTS = 3;
-    private static final int BLOCK_DURATION_MINUTES = 30;
-
     @Autowired
     private AdminRepository adminRepository;
 
@@ -29,12 +24,12 @@ public class AdminService {
     }
 
 
-    public AdminEntity getAdminById(String id) {
+    public AdminEntity getAdminById(Long id) {
         return adminRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Admin not found with ID: " + id));
     }
 
-    public void deleteAdminEntity(String id) {
+    public void deleteAdminEntity(Long id) {
         adminRepository.deleteById(id);
     }
 
