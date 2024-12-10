@@ -1,4 +1,4 @@
-package com.app.hcms;
+package com.App.HCMS;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

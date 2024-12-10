@@ -1,4 +1,4 @@
-package com.app.hcms.entity;
+package com.App.HCMS.entity;
 
 import jakarta.persistence.*;
 

@@ -1,7 +1,7 @@
-package com.app.hcms.service;
+package com.App.HCMS.service;
 
-import com.app.hcms.entity.AppointmentEntity;
-import com.app.hcms.repository.AppointmentRepository;
+import com.App.HCMS.entity.AppointmentEntity;
+import com.App.HCMS.repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

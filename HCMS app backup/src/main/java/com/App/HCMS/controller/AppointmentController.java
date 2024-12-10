@@ -1,10 +1,10 @@
-package com.app.hcms.controller;
+package com.App.HCMS.controller;
 
 import java.util.List;
 
-import com.app.hcms.entity.AppointmentEntity;
-import com.app.hcms.repository.AppointmentRepository;
-import com.app.hcms.service.AppointmentService;
+import com.App.HCMS.entity.AppointmentEntity;
+import com.App.HCMS.repository.AppointmentRepository;
+import com.App.HCMS.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

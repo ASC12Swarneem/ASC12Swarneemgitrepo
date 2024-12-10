@@ -1,6 +1,6 @@
-package com.app.hcms.repository;
+package com.App.HCMS.repository;
 
-import com.app.hcms.entity.AppointmentEntity;
+import com.App.HCMS.entity.AppointmentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

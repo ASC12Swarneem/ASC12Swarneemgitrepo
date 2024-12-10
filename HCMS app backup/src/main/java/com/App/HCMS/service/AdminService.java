@@ -1,7 +1,7 @@
-package com.app.hcms.service;
+package com.App.HCMS.service;
 
-import com.app.hcms.entity.AdminEntity;
-import com.app.hcms.repository.AdminRepository;
+import com.App.HCMS.entity.AdminEntity;
+import com.App.HCMS.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
