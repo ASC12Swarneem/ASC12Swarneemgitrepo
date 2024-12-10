@@ -11,6 +11,7 @@ import { RegisterComponent } from "./register/register.component";
 import { BookAppointmentComponent } from "./book-appointment/book-appointment.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ManageAppointmentsComponent } from "./manage-appointments/manage-appointments.component";
+import { ManageAdminsComponent } from "./manage-admins/manage-admins.component";
 
 @NgModule({
     declarations:[  AppComponent,
@@ -19,7 +20,8 @@ import { ManageAppointmentsComponent } from "./manage-appointments/manage-appoin
                     LoginComponent,
                     RegisterComponent,
                     BookAppointmentComponent,
-                    ManageAppointmentsComponent
+                    ManageAppointmentsComponent,
+                    ManageAdminsComponent
     ],
 
     imports:[   BrowserModule,

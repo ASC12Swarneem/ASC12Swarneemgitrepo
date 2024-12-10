@@ -13,34 +13,23 @@ export class AdminService{
 
     constructor (private http:HttpClient){}
 
-    getAdmins(): Observable<Admin[]> {
-        return this.http.get<Admin[]>(this.adminUrl);
+    getAdmins(): Observable<any> {
+        return this.http.get<any>(this.adminUrl);
     }
 
-    getAdminById(id: string): Observable<Admin> {
-        return this.http.get<Admin>(`${this.adminUrl}/${id}`);
+    getAdminById(id: string): Observable<any> {
+        return this.http.get<any>(`${this.adminUrl}/${id}`);
     }
 
-
-    editAdmin(id: string, updatedAdmin: Admin): Observable<any> {
-        return this.http.put<any>(`${this.adminUrl}/${id}`, updatedAdmin);
-    }
-
-    //Post Maooing
     addAdmin(admin:Admin):Observable<any>{
         return this.http.post<any>(this.adminUrl,admin)
     }
 
-    updateAdmin(id: number, admin: Admin): Observable<Admin> 
-    {
-        return this.http.put<Admin>(`${this.adminUrl}/${id}`, admin);
-    }
-
-    
-    deleteAdmin(id: number): Observable<any> {
-        const url = `${this.adminUrl}/${id}`; 
-        return this.http.delete<any>(url);
-    }
+    deleteAdmin(id: string): Observable<any> {
+      const url = `${this.adminUrl}/${id}`;
+      return this.http.delete<any>(url);
+  }
+  
 
     /**
     * Validate admin login using email and password.

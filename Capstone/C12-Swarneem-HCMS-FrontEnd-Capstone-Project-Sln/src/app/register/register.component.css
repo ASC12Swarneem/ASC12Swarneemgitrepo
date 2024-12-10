@@ -1,6 +1,5 @@
 .register-container {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     height: 87vh;
@@ -21,7 +20,6 @@ form {
 
 h2 {
     font-size: 2em;
-    /* font-weight: bold; */
     color: #333;
     margin-bottom: 20px;
     margin-left: 190px;

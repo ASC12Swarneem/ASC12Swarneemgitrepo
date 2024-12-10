@@ -111,7 +111,6 @@ public class AppointmentEntity {
         this.appointmentDate = appointmentDate;
     }
 
-    // toString method for debugging
     @Override
     public String toString() {
         return "Appointment{" +

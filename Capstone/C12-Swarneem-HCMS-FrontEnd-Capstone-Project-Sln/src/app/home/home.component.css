@@ -36,3 +36,38 @@
   border-radius: 8px;
   text-transform: inherit;
 }
+
+.widgets {
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 10px;
+  display: flex;
+  border-top: 3px solid rgb(63, 149, 155);
+  border-bottom: 3px solid rgb(63, 149, 155);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.widgets-image {
+  height: 85px;
+  border: 2px solid transparent; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.widgets-image:hover {
+  border: 2px solid rgb(63, 149, 155); 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.1);
+}
+
+.widgets div {
+  text-align: center;
+  cursor: pointer;
+}
+
+.widgets div:hover {
+  color: rgb(63, 149, 155);
+  font-weight: bold;
+}

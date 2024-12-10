@@ -8,6 +8,7 @@ import java.util.List;
 
 @Service
 public class AppointmentService {
+    int counter = 1;
     private final AppointmentRepository appointmentRepository;
 
     @Autowired
@@ -15,11 +16,13 @@ public class AppointmentService {
         this.appointmentRepository = appointmentRepository;
     }
 
-    public List<AppointmentEntity>getAllUser(){
+    public List<AppointmentEntity>getAllAppointments(){
         return appointmentRepository.findAll();
     }
 
     public AppointmentEntity createAppointment(AppointmentEntity appointmentEntity){
+        String customId = generateNextId();
+        appointmentEntity.setId(customId);
         return appointmentRepository.save(appointmentEntity);
     }
 
@@ -35,5 +38,16 @@ public class AppointmentService {
     public AppointmentEntity updateAppointment(String id, AppointmentEntity updatedAppointment) {
         updatedAppointment.setId(id);
         return appointmentRepository.save(updatedAppointment);
+    }
+
+    private String generateNextId(){
+        AppointmentEntity lastAppointment = appointmentRepository.findTopByOrderByIdDesc();
+        if(lastAppointment != null){
+            String lastId = lastAppointment.getId();
+            int lastCounter = Integer.parseInt(lastId.substring(1));
+            counter = lastCounter+1;
+        }
+
+        return "A"+ String.format("%04d", counter);
     }
 }

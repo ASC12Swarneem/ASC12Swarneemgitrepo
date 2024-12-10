@@ -5,10 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  private searchQuerySubject = new BehaviorSubject<string>(''); // Default is an empty string
+  private searchQuerySubject = new BehaviorSubject<string>('');
   searchQuery$ = this.searchQuerySubject.asObservable();
 
   updateSearchQuery(query: string): void {
-    this.searchQuerySubject.next(query); // Emit the query
+    this.searchQuerySubject.next(query);
   }
 }

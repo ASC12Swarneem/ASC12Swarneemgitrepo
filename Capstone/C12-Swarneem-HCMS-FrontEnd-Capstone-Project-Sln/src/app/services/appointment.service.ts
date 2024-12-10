@@ -27,7 +27,7 @@ export class AppointmentService{
         return this.http.put<any>(`${this.appointmentUrl}/${id}`, updatedAppointment);
     }
 
-    //Post Maooing
+    //Post Mapping
     addAppointment(appointment:Appointment):Observable<any>{
         return this.http.post<any>(this.appointmentUrl,appointment)
     }
@@ -37,7 +37,7 @@ export class AppointmentService{
         return this.http.put<Appointment>(`${this.appointmentUrl}/${id}`, appointment);
     }
 
-    
+
     deleteAppointment(id: string): Observable<any> {
         const url = `${this.appointmentUrl}/${id}`; 
         return this.http.delete<any>(url);

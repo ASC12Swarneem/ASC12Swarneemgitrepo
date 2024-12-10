@@ -10,6 +10,10 @@ import java.util.List;
 @Service
 public class AdminService {
 
+
+    private static final int MAX_FAILED_ATTEMPTS = 3;
+    private static final int BLOCK_DURATION_MINUTES = 30;
+
     @Autowired
     private AdminRepository adminRepository;
 
@@ -24,26 +28,14 @@ public class AdminService {
         return adminRepository.save(adminEntity);
     }
 
-    public AdminEntity updateAdminEntity(String id, AdminEntity updatedAdminEntity) {
-        AdminEntity existingAdminEntity = adminRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Admin not found!"));
-
-        existingAdminEntity.setFirstName(updatedAdminEntity.getFirstName());
-        existingAdminEntity.setLastName(updatedAdminEntity.getLastName());
-        existingAdminEntity.setEmail(updatedAdminEntity.getEmail());
-        existingAdminEntity.setPhoneNo(updatedAdminEntity.getPhoneNo());
-        existingAdminEntity.setPassword(updatedAdminEntity.getPassword());
-        return adminRepository.save(existingAdminEntity);
-    }
 
     public AdminEntity getAdminById(String id) {
         return adminRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Admin not found with ID: " + id));
     }
 
-
     public void deleteAdminEntity(String id) {
-
+        adminRepository.deleteById(id);
     }
 
 }

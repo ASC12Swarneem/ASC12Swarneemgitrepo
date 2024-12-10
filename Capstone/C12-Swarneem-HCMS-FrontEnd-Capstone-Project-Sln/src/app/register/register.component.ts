@@ -40,7 +40,6 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  // Validator to check if password and confirmPassword match
   passwordMatchValidator(form: FormGroup): { [key: string]: boolean } | null {
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
@@ -56,9 +55,7 @@ export class RegisterComponent implements OnInit {
     }
     this.passwordMatchValidator;
 
-    const adminData = this.signUpForm.value; // Retrieve form data
-    // delete adminData.confirmPassword; // Remove confirmPassword before sending to backend
-
+    const adminData = this.signUpForm.value;
     this.adminService.addAdmin(adminData).subscribe({
       next: () => {
         alert('Registration successful!');
