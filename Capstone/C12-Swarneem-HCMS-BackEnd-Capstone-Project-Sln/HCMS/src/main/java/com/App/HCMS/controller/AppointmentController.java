@@ -24,23 +24,13 @@ public class AppointmentController {
     }
 
     @GetMapping
-    public  ResponseEntity<List<AppointmentEntity>>getAllUsers(){
-        List<AppointmentEntity> appointmentEntities = appointmentService.getAllUser();
+    public  ResponseEntity<List<AppointmentEntity>>getAllAppointment(){
+        List<AppointmentEntity> appointmentEntities = appointmentService.getAllAppointments();
         return new ResponseEntity<>(appointmentEntities, HttpStatus.OK);
-    }
-
-    private String generateUniqueAppointmentId() {
-        long timestamp = System.currentTimeMillis();
-        String idd = "A" + String.format("%04d", count);
-        count++;
-        return idd;
     }
 
     @PostMapping
     public ResponseEntity<AppointmentEntity> createAppointment(@RequestBody AppointmentEntity appointmentEntity) {
-        if (appointmentEntity.getId() == null || appointmentEntity.getId().isEmpty()) {
-            appointmentEntity.setId(generateUniqueAppointmentId());
-        }
         AppointmentEntity savedAppointment = appointmentService.createAppointment(appointmentEntity);
         return new ResponseEntity<>(savedAppointment, HttpStatus.CREATED);
     }

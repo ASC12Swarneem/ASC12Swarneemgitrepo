@@ -70,18 +70,10 @@ export class BookAppointmentComponent implements OnInit {
     
   }
 
-
-  // updateDoctors(): void {
-  //   const selectedDepartment = this.appointmentForm.get('department')?.value;
-  //   this.filteredDoctors = selectedDepartment ? this.doctors[selectedDepartment] : [];
-  //   this.appointmentForm.get('doctor')?.setValue('');
-  // }
-
   updateDoctors(): void {
     const selectedDepartment = this.appointmentForm.get('department')?.value;
     this.filteredDoctors = selectedDepartment ? this.doctors[selectedDepartment] : [];
   
-    // Check if the current doctor value is valid for the filtered list
     const currentDoctor = this.appointmentForm.get('doctor')?.value;
     if (!this.filteredDoctors.includes(currentDoctor)) {
       this.appointmentForm.get('doctor')?.setValue(''); // Reset doctor if it's not valid
@@ -94,7 +86,6 @@ export class BookAppointmentComponent implements OnInit {
     this.appointmentService.getAppointmentById(id).subscribe({
       next: (appointment) => {
         this.appointmentForm.patchValue(appointment);
-      // this.updateDoctors;
       patientName : appointment.patientName;
       patientAge : appointment.patientAge;    
       patientWeight : appointment.patientWeight;
@@ -118,7 +109,6 @@ export class BookAppointmentComponent implements OnInit {
     const appointmentData = this.appointmentForm.value;
   
     if (this.isUpdateMode) {
-      // Update existing appointment
       this.appointmentService.editAppointment(this.appointmentId!, appointmentData).subscribe({
         next: () => {
           alert('Appointment updated successfully!');
@@ -129,8 +119,6 @@ export class BookAppointmentComponent implements OnInit {
         }
       });
     } else {
-      // Generate and assign unique ID for new appointment
-      
            const formData = {
         ...this.appointmentForm.value
       };
