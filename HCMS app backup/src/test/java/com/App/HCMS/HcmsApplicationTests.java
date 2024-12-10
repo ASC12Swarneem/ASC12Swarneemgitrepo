@@ -1,4 +1,4 @@
-package com.app.hcms;
+package com.App.HCMS;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

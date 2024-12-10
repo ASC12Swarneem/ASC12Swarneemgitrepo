@@ -1,7 +1,7 @@
-package com.app.hcms.controller;
+package com.App.HCMS.controller;
 
-import com.app.hcms.entity.AdminEntity;
-import com.app.hcms.service.AdminService;
+import com.App.HCMS.entity.AdminEntity;
+import com.App.HCMS.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
