@@ -1,0 +1,71 @@
+.navbar-container{
+    display: flex; 
+    align-items: center; 
+    justify-content:space-around ;
+    margin-bottom: -17px;
+}
+
+.logo{
+    height: 60px;
+    width: 73px;
+    margin-bottom: 20px;
+
+}
+
+.button-div{
+    display: flex;
+    padding: 5px;
+}
+
+.searchbox_navbar input{
+    padding: 10px;
+    height: 40px;
+    width: 400px;
+    border: 1px solid  #0bb09a;
+    border-radius: 5px;
+    margin-left: 87px;
+    margin-bottom: 15px; outline: none; 
+    box-shadow: none; 
+    transition: all 0.3s ease; 
+}
+
+.searchbox_navbar input:focus{ 
+    border-color: #007bff; 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6); 
+    transform: scale(1.05);
+}
+
+.btn-text{
+    display: flex; 
+    border: 1px solid #0bb09a; 
+    border-radius: 5px; 
+    padding: 0px 11px;
+    height: 30px;
+}
+
+.call-btn-heading{
+    font-size: 12px;
+    font-family: sans-serif;
+    margin-bottom: 4px;
+}
+
+.call_icons{
+    height: 16px;
+    width: 16px;
+    margin-top: 7px;
+}
+
+.call-btn-inner-text{
+    border: none; 
+    background-color: #fff; 
+    font-size: 15px;
+    padding-top: 4px;
+    font-weight: 150;
+    font-family: sans-serif;
+}
+
+.Emergency-btn-navbar{
+    padding-right: 5px;
+    width: 95px;
+    margin-bottom: 20px;
+}   
